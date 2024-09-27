@@ -190,7 +190,6 @@ img::-moz-selection {
   overflow: hidden;
 }
 
-
 header.masthead .intro-text {
   padding-bottom: 150px;
   padding-top: 50px;
@@ -253,6 +252,7 @@ header.masthead .intro-download {
   margin-top: 25px;
   margin-bottom: 0;
   text-transform: none;
+  color: #bd64b4;
 }
 
 .team-member p {
