@@ -1,0 +1,57 @@
+// _navbar.scss
+
+#mainNav {
+    background-color: white;
+  
+    .navbar-toggler {
+      font-size: 10px;
+      right: 0;
+      padding: 13px;
+      text-transform: uppercase;
+      color: white;
+      border: 0;
+      background-color: $primary-color;
+      font-family: $font-family-montserrat;
+    }
+  
+    .navbar-nav .nav-item .nav-link {
+      font-size: 80%;
+      font-weight: 400;
+      padding: 0.75em 0;
+      letter-spacing: 1px;
+      color: black;
+      font-family: $font-family-montserrat;
+    }
+  
+    .navbar-nav .nav-item .nav-link.active, .navbar-nav .nav-item .nav-link:hover {
+      color: $primary-color;
+      background-color: white;
+      border-bottom: 5px solid $primary-color;
+    }
+  
+    @media (min-width: 992px) {
+      padding-top: 25px;
+      padding-bottom: 25px;
+  
+      .navbar-brand {
+        font-size: 1.75em;
+        transition: all 0.3s;
+      }
+  
+      .navbar-nav .nav-item .nav-link {
+        padding: 1.1em 1em !important;
+      }
+  
+      &.navbar-shrink {
+        padding-top: 0;
+        padding-bottom: 0;
+        background-color: white;
+  
+        .navbar-brand {
+          font-size: 1.25em;
+          padding: 12px 0;
+        }
+      }
+    }
+  }
+  
