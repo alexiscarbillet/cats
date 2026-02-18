@@ -3,4 +3,4 @@ Disallow: /css/
 Disallow: /js/
 Disallow: /vendor/
 
-Sitemap: https://all-about-cats.uk/sitemap.xml
+Sitemap: https://cats.alexis-carbillet.com/sitemap.xml
