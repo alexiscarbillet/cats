@@ -6,6 +6,9 @@ on:
     - cron: '0 18 * * 6'
   workflow_dispatch: # Allows manual triggering
 
+permissions:
+  contents: write
+
 jobs:
   generate-article:
     runs-on: ubuntu-latest
