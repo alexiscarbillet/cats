@@ -191,8 +191,18 @@ img::selection, img::-moz-selection {
   margin-top: 0;
 }
 
+#portfolio {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f0f0f5 100%);
+  padding: 80px 0;
+}
+
+#portfolio .container {
+  max-width: 1200px;
+}
+
 #portfolio .portfolio-item {
-  margin: 0 0 15px;
+  margin: 0 0 30px;
+  padding: 0 10px;
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -200,31 +210,69 @@ img::selection, img::-moz-selection {
   display: block;
   margin: 0 auto;
   cursor: pointer;
-  border-radius: 2%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(189, 100, 180, 0.15);
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+#portfolio .portfolio-item .portfolio-link:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(189, 100, 180, 0.3);
+}
+
+#portfolio .portfolio-item .portfolio-link img {
+  transition: transform 0.4s ease;
+  border-radius: 12px;
+}
+
+#portfolio .portfolio-item .portfolio-link:hover img {
+  transform: scale(1.08);
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: all 1s ease;
+  transition: all 0.4s ease;
   opacity: 0;
-  background-color: #212529;
-  border-radius: 2%;
+  background: linear-gradient(135deg, rgba(33, 37, 41, 0.95) 0%, rgba(189, 100, 180, 0.85) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
-  opacity: 0.8;
+  opacity: 1;
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
   font-size: 22px;
-  position: absolute;
-  top: 20%;
   width: 100%;
-  height: 20px;
   text-align: center;
   color: white;
+  padding: 20px;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content p {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content hr {
+  border: none;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 10px 0;
+}
+
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content .explanation_catalogue {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0 0 0;
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
