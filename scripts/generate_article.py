@@ -77,7 +77,7 @@ CATEGORY:behavior_psycho
 Recent topics to avoid: {", ".join(history[-5:]) if history else "none"}
 """
 
-    print("🤖 Consulting Gemini 2.0 Flash...")
+    print("🤖 Consulting Gemini 3.0 Flash...")
     response = client.models.generate_content(model="gemini-3-flash-preview", contents=prompt)
     return response.text.strip()
 
