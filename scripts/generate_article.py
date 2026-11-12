@@ -11,7 +11,7 @@ from pathlib import Path
 
 # --- Setup ---
 api_key = os.environ.get("GEMINI_API_KEY")
-client = genai.Client(api_key=api_key)
+client = genai.Client(api_key=api_key, http_options={"api_version": "v1beta"})
 HISTORY_FILE = "article_history.json"
 
 # Categories for index.html
@@ -77,8 +77,17 @@ CATEGORY:behavior_psycho
 Recent topics to avoid: {", ".join(history[-5:]) if history else "none"}
 """
 
-    print("🤖 Consulting Gemini 3.0 Flash...")
-    response = client.models.generate_content(model="gemini-3-flash-preview", contents=prompt)
+    model = os.environ.get("GEMINI_MODEL", "gemini-3-flash-preview")
+    print(f"🤖 Consulting Gemini ({model})...")
+    try:
+        response = client.models.generate_content(model=model, contents=prompt)
+    except Exception as e:
+        if "404" in str(e) or "NOT_FOUND" in str(e) or "not found" in str(e).lower():
+            fallback_model = "gemini-2.5-flash"
+            print(f"⚠️ Warning: Model '{model}' failed ({e}). Retrying with fallback model '{fallback_model}'...")
+            response = client.models.generate_content(model=fallback_model, contents=prompt)
+        else:
+            raise
     return response.text.strip()
 
 

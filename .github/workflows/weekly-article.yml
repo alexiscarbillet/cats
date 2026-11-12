@@ -33,6 +33,7 @@ jobs:
         run: python scripts/generate_article.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_GENAI_API_VERSION: v1beta
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Push changes
