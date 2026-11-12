@@ -77,7 +77,7 @@ CATEGORY:behavior_psycho
 Recent topics to avoid: {", ".join(history[-5:]) if history else "none"}
 """
 
-    model = os.environ.get("GEMINI_MODEL", "gemini-3-flash-preview")
+    model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
     print(f"🤖 Consulting Gemini ({model})...")
     try:
         response = client.models.generate_content(model=model, contents=prompt)
